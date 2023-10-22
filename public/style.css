@@ -1,0 +1,36 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.navigation-bar{
+    position:sticky;
+    top: 0;
+    padding:15px 13%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation-bar > img{
+    width:150px;
+    cursor: pointer;
+}
+
+.navigation-bar > ul{
+    width:20%;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    cursor: pointer;
+    color: #909090;
+}
+
+.active{
+    color:black;
+    border-bottom:3px solid #ff0000;
+    padding-bottom:6px;
+    font-weight: 600;
+}

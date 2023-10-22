@@ -1,5 +1,5 @@
 /* Importing Routing components */
-import {BrowserRouter, Switch, Routes, Route} from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 /* Importing pages */
 import Home from './pages/Home'
@@ -8,11 +8,16 @@ import SignUp from './pages/SignUp'
 import ForgotPassword from './pages/ForgotPassword'
 import Profile from './pages/Profile'
 import Offers from './pages/Offers'
+
+/* Importing components */
+import Header from './components/Header';
+
 function App() {
 
   return (
     <>
       <BrowserRouter>
+        <Header/>
         <Routes>
           <Route path="/" element={<Home/>} />
           <Route path="/sign-in" element={<SignIn/>} />
