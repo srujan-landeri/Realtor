@@ -1,6 +1,3 @@
-/* Importing styles */
-import './App.css';
-
 /* Importing Routing components */
 import {BrowserRouter, Switch, Routes, Route} from 'react-router-dom';
 
