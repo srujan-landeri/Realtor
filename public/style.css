@@ -5,6 +5,12 @@
     font-family: sans-serif;
 }
 
+a, button{
+    cursor: pointer;
+}
+
+/* Header Styling */
+
 .navigation-bar{
     position:sticky;
     top: 0;
@@ -12,6 +18,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
 }
 
 .navigation-bar > img{
@@ -28,9 +36,134 @@
     color: #909090;
 }
 
+.navigation-bar > ul > li{
+    border-bottom:3px solid transparent;
+    padding-bottom:6px;
+}
+
 .active{
     color:black;
-    border-bottom:3px solid #ff0000;
+    border-bottom:3px solid #ff0000 !important;
     padding-bottom:6px;
-    font-weight: 600;
+}
+
+/* SignIn Styling */
+
+.signin{
+    background-color: #f1faee;
+    width:100vw;
+    height:90vh;
+}
+
+.signin > h1 {
+    text-align: center;
+    padding-block:30px;
+}
+
+.signin > div{
+    display: flex;
+    gap:100px;
+    justify-content: center;
+}
+
+.signin > div > img{
+    width:552px;
+    border-radius: 15px;
+}
+
+.signin-form{
+    width:35%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signin-form > input{
+    padding:10px 10px;
+    width:85%;
+    margin-block:10px;
+    border:0.5px solid #909090;
+    border-radius: 5px;
+    font-size:18px;
+}
+
+.signin-form > div{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    padding-block:20px;
+    font-size: 18px;
+}
+
+.signin-form > div > p{
+    color:#1f296c;
+}
+
+.signin-form > div > p > span{
+    color:red;
+    cursor:pointer;
+}
+
+.signin-form > div > span{
+    color:#2563eb;
+    cursor:pointer;
+}
+
+.signin-form > button{
+    width:85%;
+    padding: 12px;
+    font-size:15px;
+    text-transform: uppercase;
+    color:white;
+    border:none;
+    border-radius:5px;
+}
+
+.signin-form > p{
+    color:#000000;
+    font-size: 18px;
+    padding-block:20px;
+    position: relative;
+    width:85%;
+    text-align: center;
+}
+
+.signin-form > p::after{
+    content: "";
+    position:absolute;
+    top:50%;
+    right:0;
+    width: 45%;
+    height: 1px;
+    background-color: #5a5959;
+}
+
+.signin-form > p::before{
+    content: "";
+    position:absolute;
+    top:50%;
+    left:0;
+    width: 45%;
+    height: 1px;
+    background-color: #5a5959;
+}
+
+.normal-signin{
+    background-color: #2563eb;
+}
+
+.google-signin{
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+}
+
+.google-icon{
+    background-color: white;
+    border-radius: 50%;
+    padding:2px;
 }

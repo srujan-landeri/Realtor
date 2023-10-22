@@ -6,7 +6,8 @@ import { useNavigate } from 'react-router-dom'
 
 export default function Header() {
 
-    const [activeTab, setActiveTab] = useState('home')
+    const [activeTab, setActiveTab] = useState('sign-in')
+
     const navigate = useNavigate()
 
     function handleActiveTab(tab) {
