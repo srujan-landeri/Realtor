@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 
 /* importing  navigator to navigate */
@@ -9,6 +9,10 @@ export default function Header() {
     const [activeTab, setActiveTab] = useState('sign-in')
 
     const navigate = useNavigate()
+
+    useEffect(() => {
+        handleActiveTab(activeTab)
+    },[])
 
     function handleActiveTab(tab) {
         

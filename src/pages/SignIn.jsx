@@ -1,11 +1,32 @@
 import React from 'react'
-import {FcGoogle} from 'react-icons/fc'
 import {useNavigate} from 'react-router-dom'
+import OAuth from '../components/OAuth'
 
 export default function SignIn() {
 
   const navigate = useNavigate()
+  const [form, setForm] = React.useState({
+    email: '',
+    password: ''
+  })
 
+  function handleFormChange(event){
+
+    const {name, value} = event.target
+
+    setForm(prev => {
+      return {
+        ...prev,
+        [name]: value
+      }
+    })
+
+  }
+
+  function handleFormSubmit(event){
+    event.preventDefault()
+    console.log(form)
+  }
 
   return (
     <div className = 'signin'>
@@ -14,26 +35,22 @@ export default function SignIn() {
       <div>
         <img src="https://images.unsplash.com/flagged/photo-1564767609342-620cb19b2357" alt="" />
 
-        <div className='signin-form'>
-          <input type="email" placeholder='Email address' name="" id="" />
-          <input type="password" placeholder='Password' name="" id="" />
+        <form className='signin-form'>
+          <input type="email" placeholder='Email address' name="email" onChange = {handleFormChange} id="" />
+          <input type="password" placeholder='Password' name="password" onChange = {handleFormChange} id="" />
 
           <div>
             <p>Don't have an account? <span onClick = {() => navigate('/sign-up')}>Register</span></p>
             <span onClick = {() => navigate('/forgot-password')}>Forgot password?</span>
           </div>
 
-          <button className='normal-signin'>Sign In</button>
+          <button className='normal-signin' onClick={handleFormSubmit}>Sign In</button>
 
           
           <p>OR</p>
 
-          <button className='google-signin'>
-            <FcGoogle className='google-icon' size={25}/>
-            Continue with Google
-          </button>
-
-        </div>
+          <OAuth/>
+        </form>
       </div>
     </div>
   )

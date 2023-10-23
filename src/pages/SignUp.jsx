@@ -1,10 +1,36 @@
 import React from 'react'
-import {FcGoogle} from 'react-icons/fc'
 import {useNavigate} from 'react-router-dom'
+import OAuth from '../components/OAuth'
 
 export default function SignUp() {
 
   const navigate = useNavigate()
+
+  const [form, setForm] = React.useState({
+    name: '',
+    email: '',
+    password: ''
+  })
+
+  function handleFormChange(event){
+
+    const {name, value} = event.target
+
+    setForm(prev => {
+      return {
+        ...prev,
+        [name]: value
+      }
+    })
+
+  }
+
+  function handleFormSubmit(event){
+    event.preventDefault()
+    console.log(form)
+  }
+
+
   return (
     <div className = 'signin'>
       <h1>Sign In</h1>
@@ -12,27 +38,25 @@ export default function SignUp() {
       <div>
         <img src="https://images.unsplash.com/flagged/photo-1564767609342-620cb19b2357" alt="" />
 
-        <div className='signin-form'>
-          <input type="name" placeholder='Full Name' name="" id="" />
-          <input type="email" placeholder='Email address' name="" id="" />
-          <input type="password" placeholder='Password' name="" id="" />
+        <form className='signin-form'>
+          <input type="name" placeholder='Full Name' name="name" onChange={handleFormChange} id="" />
+          <input type="email" placeholder='Email address' name="email" onChange={handleFormChange} id="" />
+          <input type="password" placeholder='Password' name="password" onChange={handleFormChange} id="" />
 
           <div>
             <p>Have an account? <span onClick = {() => navigate('/sign-in')}>Sign in</span></p>
             <span onClick = {() => navigate('/forgot-password')}>Forgot password?</span>
           </div>
 
-          <button className='normal-signin'>Sign Up</button>
+          <button className='normal-signin' onClick={handleFormSubmit}>Sign Up</button>
 
           
           <p>OR</p>
 
-          <button className='google-signin'>
-            <FcGoogle className='google-icon' size={25}/>
-            Continue with Google
-          </button>
+          <OAuth/>
 
-        </div>
+
+        </form>
       </div>
     </div>
   )
